@@ -6,6 +6,12 @@ tool calls with invented CLI commands. `zing serve-mcp --print-config` prints
 absolute interpreter paths for setup; launch the server on the media's machine.
 An MCP-only client cannot execute CLI-only operations without a separate shell.
 
+The server requires the official Python MCP SDK `>=2.3,<3`. Stdio supports
+legacy `initialize` (`2024-11-05` through `2025-11-25`) and stateless
+`2026-07-28` requests. Client launch commands are unchanged. Modern requests
+carry protocol version and client capabilities in `params._meta`; use the
+client's SDK to supply them. There is no HTTP MCP endpoint.
+
 | Tools | Purpose |
 |---|---|
 | `zing_status` | Doctor summary, stored breakdowns and study job status. |
@@ -66,9 +72,9 @@ output-time cut. Omit the range to center rows on internal EDL cuts.
 Verify an image was created and inspect its pixels before claiming visual review.
 
 There are no MCP equivalents here for project scanning, assembly, color matching,
-audio analysis, layout planning or native meme animation. Use the real CLI where
-available. The HyperFrames sidecar also has no MCP tool and is not routed through
-`render_edl`.
+audio analysis, layout planning or font matching. Use the real CLI where
+available. The HyperFrames sidecar has no standalone MCP tool; `render_edl`
+accepts v2 HyperFrames captions when the local sidecar is configured.
 
 Uoink is optional. `study_uoink_item` takes an item reference such as
 `uoink://item/ID`; a project reference written as `uoink:ID` is only inventory
