@@ -7,7 +7,7 @@ description: >-
   Use when the user asks what a video or podcast said, wants a source quoted
   with a timestamp, or wants a link saved for later.
 license: MIT
-compatibility: Needs the Uoink desktop app (3.15.1 or later) installed on the same computer as Hermes.
+compatibility: Needs the Uoink desktop app (3.15.0 or later) installed on the same computer as Hermes.
 metadata:
   homepage: https://uoink.app
 ---
@@ -19,7 +19,7 @@ This plugin gives you its tools. Everything you read comes from that local
 library; nothing is sent to a Uoink server.
 
 Tools appear as `mcp__uoink__<tool>` (library, capture, transcripts) and
-`mcp__uoink-research__<tool>` (research runs).
+`mcp__uoink_research__<tool>` (research runs).
 
 ## If the tools are not there
 
@@ -72,7 +72,7 @@ Say when a transcript came from speech-to-text, since it can mishear names.
 
 ## Research with checked quotes
 
-Use `mcp__uoink-research__*` tools, in order, only when the user asks for
+Use `mcp__uoink_research__*` tools, in order, only when the user asks for
 research across sources:
 
 1. `research_start(question, max_sources, max_asr_minutes)`. If it reports

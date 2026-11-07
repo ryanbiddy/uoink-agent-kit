@@ -13,7 +13,7 @@ command from the Uoink app you installed.
 ## Install
 
 1. Install Uoink first, from [github.com/ryanbiddy/uoink/releases](https://github.com/ryanbiddy/uoink/releases)
-   (3.15.1 or later).
+   (3.15.0 or later).
    - Windows: leave **Add the uoink command to PATH for AI agents** checked.
    - Mac: link the command once, then open a new terminal:
      `ln -s /Applications/Uoink.app/Contents/Helpers/uoink ~/.local/bin/uoink`
@@ -28,7 +28,7 @@ hermes plugins install ryanbiddy/uoink-agent-kit/plugins/hermes-uoink --no-enabl
 hermes plugins enable uoink
 ```
 
-Hermes refuses to install, and hides the tools, if it cannot find Uoink 3.15.1
+Hermes refuses to install, and hides the tools, if it cannot find Uoink 3.15.0
 or later. Restart Hermes after enabling.
 
 ## What you get
@@ -113,6 +113,6 @@ Hermes: [research_start] Needs your OK to search the web in Uoink's settings.
 - No Uoink tools in Hermes: run `hermes plugins list`, then `uoink status` in
   the same terminal that starts Hermes. On Mac, check the PATH link.
 - A tool says "Open Uoink first": open the Uoink app, then retry.
-- Uoink 3.15.0 or older is hidden on purpose. Update Uoink.
+- Uoink older than 3.15.0 is hidden on purpose. Update Uoink.
 
 License: MIT. Source: [ryanbiddy/uoink-agent-kit](https://github.com/ryanbiddy/uoink-agent-kit).
