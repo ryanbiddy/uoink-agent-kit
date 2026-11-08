@@ -1,0 +1,123 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "uoink",
+  "version": "0.1.0",
+  "description": "Connects Hermes to your installed Uoink app: capture a link into your local library, search it, read transcripts with timestamps, and run research that checks its quotes.",
+  "author": {
+    "name": "Ryan Biddy",
+    "url": "https://uoink.app"
+  },
+  "homepage": "https://uoink.app",
+  "repository": "https://github.com/ryanbiddy/uoink-agent-kit",
+  "license": "MIT",
+  "keywords": [
+    "uoink",
+    "transcripts",
+    "youtube",
+    "podcasts",
+    "research",
+    "citations",
+    "library",
+    "mcp"
+  ],
+  "extensions": {
+    "com.nousresearch.hermes": {
+      "servers": {
+        "uoink": {
+          "trust": "untrusted",
+          "timeout": 900,
+          "app": {
+            "win32": {
+              "presence": "executable",
+              "location": [
+                {
+                  "kind": "uninstall_registry",
+                  "display_name_prefix": "Uoink",
+                  "file": "cli/uoink.cmd"
+                },
+                "%LOCALAPPDATA%/Uoink/cli/uoink.cmd"
+              ],
+              "version": {
+                "kind": "uninstall_registry",
+                "display_name_prefix": "Uoink"
+              }
+            },
+            "darwin": {
+              "presence": "bundle",
+              "location": [
+                {
+                  "kind": "app_bundle",
+                  "name": "Uoink.app"
+                }
+              ],
+              "version": {
+                "kind": "plist"
+              }
+            },
+            "linux": {
+              "presence": "executable",
+              "location": [
+                {
+                  "kind": "command",
+                  "name": "uoink"
+                },
+                "~/.local/bin/uoink"
+              ]
+            }
+          },
+          "requires": {
+            "app": true,
+            "min_version": "3.15.0"
+          }
+        },
+        "uoink-research": {
+          "trust": "untrusted",
+          "timeout": 300,
+          "app": {
+            "win32": {
+              "presence": "executable",
+              "location": [
+                {
+                  "kind": "uninstall_registry",
+                  "display_name_prefix": "Uoink",
+                  "file": "cli/uoink.cmd"
+                },
+                "%LOCALAPPDATA%/Uoink/cli/uoink.cmd"
+              ],
+              "version": {
+                "kind": "uninstall_registry",
+                "display_name_prefix": "Uoink"
+              }
+            },
+            "darwin": {
+              "presence": "bundle",
+              "location": [
+                {
+                  "kind": "app_bundle",
+                  "name": "Uoink.app"
+                }
+              ],
+              "version": {
+                "kind": "plist"
+              }
+            },
+            "linux": {
+              "presence": "executable",
+              "location": [
+                {
+                  "kind": "command",
+                  "name": "uoink"
+                },
+                "~/.local/bin/uoink"
+              ]
+            }
+          },
+          "requires": {
+            "app": true,
+            "min_version": "3.15.0"
+          }
+        }
+      }
+    }
+  }
+}

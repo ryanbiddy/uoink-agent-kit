@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "uoink": {
+      "type": "stdio",
+      "command": "uoink",
+      "args": ["mcp"],
+      "env": {
+        "UOINK_MCP_TOOLSET": "search",
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUTF8": "1"
+      }
+    },
+    "uoink-research": {
+      "type": "stdio",
+      "command": "uoink",
+      "args": ["mcp"],
+      "env": {
+        "UOINK_MCP_TOOLSET": "research",
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUTF8": "1"
+      }
+    }
+  }
+}

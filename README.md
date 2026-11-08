@@ -81,6 +81,24 @@ so check the installed harness's help before registering it.
 The agent must be able to execute Uoink on the Windows machine holding the
 library. Copying a skill into a remote environment does not expose local files.
 
+## Hermes Agent plugin
+
+`plugins/hermes-uoink` is a portable Agent Plugins v1 package for
+[Hermes Agent](https://hermes-agent.nousresearch.com) 0.23.0 or later: the
+skill plus two small MCP servers (search and research, 15 tools in all) that run
+the installed `uoink mcp`. Hermes asks before captures, notes and research
+steps, and hides the tools when Uoink 3.15.1 or later is not installed. Install
+Uoink first, then:
+
+```bash
+hermes plugins install ryanbiddy/uoink-agent-kit/plugins/hermes-uoink --no-enable
+hermes plugins enable uoink
+```
+
+See [its README](plugins/hermes-uoink/README.md) for the Mac PATH step and the
+disclosures. This plugin is separate from the Claude Code plugin in
+`plugins/uoink`.
+
 ## Other MCP clients
 
 ```powershell
@@ -162,6 +180,9 @@ generated from `uoink_connect.py`; do not edit it by hand.
 plugins/uoink/.claude-plugin/plugin.json
 plugins/uoink/.mcp.json
 plugins/uoink/skills/uoink/
+plugins/hermes-uoink/plugin.json
+plugins/hermes-uoink/mcp.json
+plugins/hermes-uoink/skills/uoink/
 plugins/zing/.claude-plugin/plugin.json
 plugins/zing/.mcp.json
 plugins/zing/skills/zing/
